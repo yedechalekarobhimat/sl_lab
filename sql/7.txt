@@ -1,0 +1,32 @@
+# 7 Database Connectivity:
+# Write a program to implement MySQL/Oracle database connectivity with any front
+# end language to implement Database navigation operations (add, delete, edit etc.)
+
+# # pip install mysql-connector-python
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="password",
+    database="ass7"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("INSERT INTO employee VALUES(1, 'Prathamesh');")
+mycursor.execute("SELECT * FROM employee;")
+# mycursor.execute("CREATE DATABASE ass7;")
+
+
+for x in mycursor:
+    print(x)
+
+
+
+
+
+
+
+
+
